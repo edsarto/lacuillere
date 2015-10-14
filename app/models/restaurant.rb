@@ -7,7 +7,12 @@ class Restaurant < ActiveRecord::Base
                       length: { minimum: 1 }
   validates :category, presence: true,
                        length: { minimum: 1 }
+  validates_inclusion_of :category, :in => %w( italian french chinese japanese belgian )
   validates :phone_number, presence: true, allow_blank: true,
                            length: { minimum: 1 }
 
 end
+
+
+
+# array supply membre de cet array ou non
